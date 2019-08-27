@@ -1,7 +1,9 @@
 from django.shortcuts import render
 import pandas as pd
 from django.http import HttpResponse
+
 from core.models import Program, Partner, FiveW, District, GapaNapa
+
 
 
 # Create your views here.
@@ -11,6 +13,7 @@ def uploadData(request):
     else:
         csv = request.FILES["csv_file"]
         df = pd.read_csv(csv)
+
         upper_range = len(df)
         org_col = df['ORGANIZATION NAME']
 
@@ -63,8 +66,11 @@ def uploadData(request):
                 # except:
                 #     nagarpalika = None
 
+
                 # FiveW.objects.create(fiveData)
+
 
             return HttpResponse(df['ORGANIZATION NAME'][0])
         except Exception as e:
             return HttpResponse(e)
+

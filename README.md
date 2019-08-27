@@ -1,8 +1,10 @@
+
 # Dvs
 
 [![Requirements Status](https://requires.io/github/dfid-dvs/server/requirements.svg?branch=master)](https://requires.io/github/dfid-dvs/server/requirements/?branch=master)
 
 ### Pipeline Test Status :
+
 
 | Stages | Status |
 | ------ | ------ |
@@ -10,12 +12,16 @@
 | Staging  | [![CircleCI](https://circleci.com/gh/naxadeve/dvsphase2/tree/master.svg?style=svg)](https://circleci.com/gh/naxadeve/dvsphase2/tree/master) |
 | Development | [![CircleCI](https://circleci.com/gh/naxadeve/dvsphase2/tree/test-server-setup.svg?style=svg)](https://circleci.com/gh/naxadeve/dvsphase2/tree/test-server-setup)
 
+
 ### Steps To Follow
+
 
 - Clone this repository
 
+
 - Install docker and docker-compose in your system.
  Docker Refrence [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+
 
 - Create a symlink with name docker-compose.yml to docker-compose.local.yml
 ```sh

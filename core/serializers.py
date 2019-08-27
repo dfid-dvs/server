@@ -22,12 +22,15 @@ class MarkerValuesSerializer(serializers.ModelSerializer):
         fields = ('marker_values', 'marker_category')
 
     def get_marker_category(self, obj):
+
         return str(obj.marker_category)
+
 
 
 class ProgramSerializer(serializers.ModelSerializer):
     marker = serializers.SerializerMethodField()
     sub_sector = serializers.SerializerMethodField()
+
 
     class Meta:
         model = Program
@@ -113,3 +116,4 @@ class FivewSerializer(serializers.ModelSerializer):
 
     def get_implenting_partner_third(self, obj):
         return str(obj.implenting_partner_third)
+
