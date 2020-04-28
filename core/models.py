@@ -7,8 +7,10 @@ from io import BytesIO
 from colorfield.fields import ColorField
 
 
+
 # Create your models here.
 class Partner(models.Model):
+
     name = models.CharField(max_length=100, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     type_of_institution = models.CharField(max_length=100, null=True, blank=True)
@@ -56,6 +58,7 @@ class Partner(models.Model):
             # raise Exception('Could not create thumbnail - is the file type valid?')
         super(Partner, self).save(*args, **kwargs)
 
+
     def __str__(self):
         return self.name
 
@@ -70,14 +73,18 @@ class PartnerContact(models.Model):
         return self.name
 
 
+
 class MarkerCategory(models.Model):
+
     name = models.CharField(max_length=100, null=True, blank=True)
+
 
     def __str__(self):
         return self.name
 
 
 class MarkerValues(models.Model):
+
     marker_category_id = models.ForeignKey(MarkerCategory, on_delete=models.CASCADE, related_name='MarkerCategory')
 
     value = models.CharField(max_length=100, null=True, blank=True)
@@ -89,11 +96,12 @@ class MarkerValues(models.Model):
 class Sector(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
 
+
     def __str__(self):
         return self.name
 
-
 class SubSector(models.Model):
+
     sector_id = models.ForeignKey(Sector, on_delete=models.CASCADE, related_name='Sector', null=True, blank=True)
     name = models.CharField(max_length=100, blank=True, null=True)
     code = models.CharField(max_length=100, blank=True, null=True)
@@ -120,8 +128,10 @@ class Program(models.Model):
     status = models.CharField(max_length=50, choices=status, default='ongoing')
     budget = models.CharField(max_length=100, null=True, blank=True)
 
+
     def __str__(self):
         return self.name
+
 
 
 class Province(models.Model):

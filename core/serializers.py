@@ -1,13 +1,16 @@
 from rest_framework import serializers
+
 from .models import Partner, Program, MarkerValues, MarkerCategory, District, Province, GapaNapa, FiveW, Indicator, \
     IndicatorValue, Sector, SubSector, TravelTime, GisLayer, Project, Output, Notification, BudgetToSecondTier, \
     Filter
+
 
 
 class PartnerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Partner
         fields = '__all__'
+
 
 
 class MarkerCategorySerializer(serializers.ModelSerializer):
@@ -39,8 +42,10 @@ class GisLayerSerializer(serializers.ModelSerializer):
         return styl
 
 
+
 class OutputSerializer(serializers.ModelSerializer):
     class Meta:
+
         model = Output
         fields = '__all__'
 
@@ -48,6 +53,7 @@ class OutputSerializer(serializers.ModelSerializer):
 class NotificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notification
+
         fields = '__all__'
 
 
@@ -56,6 +62,7 @@ class MarkerValuesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MarkerValues
+
         fields = ('id', 'value', 'marker_category_id', 'marker_category')
 
     def get_marker_category(self, obj):
@@ -232,3 +239,4 @@ class TravelTimeSerializer(serializers.ModelSerializer):
 
     def get_geography(self, obj):
         return str(obj.gapanapa.geography)
+

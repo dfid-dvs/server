@@ -1,7 +1,10 @@
+
+
 from django.urls import path, include
 from core import views
 
 urlpatterns = [
+
     path('partner/', views.PartnerView.as_view({'get': 'list'}), name='partner'),
     path('marker-category/', views.MarkerCategoryApi.as_view({'get': 'list'}), name='marker-category'),
     path('marker-value/', views.MarkerValueApi.as_view({'get': 'list'}), name='marker-value'),
@@ -27,5 +30,6 @@ urlpatterns = [
          name="district-indicator"),
     path('province-indicator/<int:indicator_id>/', views.ProvinceIndicator.as_view({'get': 'list'}),
          name="province-indicator"),
+
 
 ]

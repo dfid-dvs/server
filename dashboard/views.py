@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 import pandas as pd
+
 from django.http import HttpResponse, HttpResponseRedirect
 import requests
 from django.template.loader import render_to_string
@@ -41,6 +42,7 @@ from django.core.paginator import Paginator
 from rest_framework.permissions import AllowAny, IsAuthenticated
 
 
+
 # Create your views here.
 
 @login_required()
@@ -57,11 +59,13 @@ def login_test(request, **kwargs):
 @login_required()
 def uploadData(request):
     if "GET" == request.method:
+
         return render(request, 'shapefile.html')
     else:
         csv = request.FILES["shapefile"]
         df = pd.read_csv(csv)
         upper_range = len(df)
+
 
         try:
             # fiveData = [
@@ -69,6 +73,7 @@ def uploadData(request):
             #         program_name=Program.objects.get(program_name='Naxa'),
             #         partner_name=Partner.objects.get(partner_name='Naxa')
             #     ) for row in range(0, 2)
+
             # ]
 
             # five = FiveW.objects.bulk_create(fiveData)

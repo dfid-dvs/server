@@ -1,3 +1,4 @@
+
 from django.contrib.gis.db import models
 from django.contrib.auth.models import User
 from core.models import Partner, Program, Project
@@ -60,3 +61,4 @@ class Log(models.Model):
 
     def __str__(self):
         return self.message
+

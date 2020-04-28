@@ -1,3 +1,4 @@
+
 from .models import Partner, Program, MarkerValues, District, Province, GapaNapa, FiveW, Indicator, IndicatorValue, \
     Sector, SubSector, MarkerCategory, TravelTime, GisLayer, Project, Output, Notification, BudgetToSecondTier
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -7,10 +8,12 @@ from .serializers import PartnerSerializer, ProgramSerializer, MarkerValuesSeria
     TravelTimeSerializer, GisLayerSerializer, ProjectSerializer, OutputSerializer, NotificationSerializer, \
     ContractSumSerializer
 from rest_framework import viewsets, views
+
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.authentication import TokenAuthentication, BasicAuthentication, SessionAuthentication
 from django.db.models import Q
+
 from django.db import connection
 from django.http import Http404, HttpResponse
 import json
@@ -474,6 +477,7 @@ class TravelTimeApi(viewsets.ReadOnlyModelViewSet):
     def get_serializer_class(self):
         serializer_class = TravelTimeSerializer
         return serializer_class
+
 
 
 

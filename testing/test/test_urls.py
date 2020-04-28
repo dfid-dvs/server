@@ -11,6 +11,7 @@ class TestUrls:
         path = reverse('program')
         assert resolve(path).view_name == "program"
 
+
     def test_core_marker_category_url(self):
         path = reverse('marker-category')
         assert resolve(path).view_name == "marker-category"
@@ -18,6 +19,7 @@ class TestUrls:
     def test_core_marker_value_url(self):
         path = reverse('marker-value')
         assert resolve(path).view_name == "marker-value"
+
 
     def test_core_district_url(self):
         path = reverse('district')
@@ -28,12 +30,15 @@ class TestUrls:
         assert resolve(path).view_name == "province"
 
     def test_core_gapanapa_url(self):
+
         path = reverse('municipality')
         assert resolve(path).view_name == "municipality"
+
 
     def test_core_fivew_url(self):
         path = reverse('fivew')
         assert resolve(path).view_name == "fivew"
+
 
     def test_core_sector(self):
         path = reverse('sector')
@@ -54,3 +59,4 @@ class TestUrls:
     def test_dashboard_token(self):
         path = reverse('token')
         assert resolve(path).view_name == "token"
+
