@@ -12,7 +12,7 @@ pandas==1.0.3
 djangorestframework-camel-case==0.2.0
 pillow==7.1.1
 django-cors-headers==3.2.1
-django-debug-toolbar==2.2
+django-debug-toolbar==2.2.1
 django-colorfield==0.3.0
 gdal==2.4.0
 djangorestframework-mvt==0.2.4
